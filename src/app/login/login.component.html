@@ -1,12 +1,33 @@
-
+<!-- client id:772453149406-40ctg1aupn8hok7uttrquur55tfd313g.apps.googleusercontent.com -->
+<meta name="google-signin-client_id"
+  content="772453149406-40ctg1aupn8hok7uttrquur55tfd313g.apps.googleusercontent.com.apps.googleusercontent.com">
+  <script src="https://accounts.google.com/gsi/client" async></script>
 <body>
-    <form action="" class="loginbox" [formGroup]="login" (submit)="applylogin()">
-        <h1>Login</h1>
-        <div class="inputbox">
-        <input type="text" class="inputbox" placeholder="Username" formControlName="Username"></div>
-        <div class="inputbox"><input type="password" class="inputbox" placeholder="Password" formControlName="Password"></div>
-        <p class="Sign-in">Sign-in using Bitsathy Credentials</p>
-        <button type="submit" id="submit" >Login</button>
-        <a id="Register" href="#">Click here to Register</a>
-    </form>
-</body>
+  <div action="" class="loginbox" >
+    <h1>Login</h1>
+    <img src="assets\BIT_LOGO-removebg-preview.png" alt="BitLogo" id="Logo">
+    <h2>GD Portal</h2>
+    <p class="Sign-in">Sign-in using Bitsathy Account
+    </p>
+    <div id="g_id_onload" data-client_id="772453149406-abjsh6ajdo61sr3rcsfqav4u3mj6b5ap.apps.googleusercontent.com"
+      data-context="signin" data-ux_mode="popup" data-callback="handleOauthResponse" data-auto_prompt="false"></div>
+    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_white" data-text="signin_with"
+      data-size="medium" data-logo_alignment="left" id="G-btn">
+    </div>
+    <!-- <script>
+      function decodeJWTToken(token){
+    return JSON.parse(atob(token.split(".")[1]))
+  }
+  window.handleCredentialResponse = (response) => {
+  // decodeJwtResponse() is a custom function defined by you
+  // to decode the credential response.
+  responsePayload = decodeJwtResponse(response.credential);
+
+  console.log("ID: " + responsePayload.sub);
+  console.log('Full Name: ' + responsePayload.name);
+  console.log('Given Name: ' + responsePayload.given_name);
+  console.log('Family Name: ' + responsePayload.family_name);
+  console.log("Image URL: " + responsePayload.picture);
+  console.log("Email: " + responsePayload.email);
+}
+    </script> -->

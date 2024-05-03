@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="https://accounts.google.com/gsi/client" async></script>
   <meta charset="utf-8">
   <title>Slotbooking</title>
   <base href="/">
@@ -8,7 +9,27 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    <!-- Function to handle the JWT response -->
+  
+    function decodeJWTToken(token){
+      return JSON.parse(atob(token.split(".")[1]))
+    }
+    function handleOauthResponse(response){
+      const responsePayload = decodeJWTToken(response.credential)
+      console.log(responsePayload)
+      sessionStorage.setItem('loggedinUser',JSON.stringify(responsePayload))
+      // window.location.href="/dashboard"
+      //Changed the above URL where you want user to be redirected
+      
+      console.log("ID: " + responsePayload.sub);
+  console.log('Full Name: ' + responsePayload.name);
+  console.log('Given Name: ' + responsePayload.given_name);
+  console.log('Family Name: ' + responsePayload.family_name);
+  console.log("Image URL: " + responsePayload.picture);
+  console.log("Email: " + responsePayload.email);
+    }
+  </script>
   <app-root></app-root>
 </body>
 </html>
